@@ -51,14 +51,6 @@
 							</div>
 						</div>
 					</c:forEach>
-
-					<c:forEach items="${model.events}" var="event">
-						<c:out value="${event.description}" />
-						<i>$<c:out value="${event.id}" /></i>
-						<br>
-						<br>
-					</c:forEach>
-
 				</div>
 			</div>
 		</div>
