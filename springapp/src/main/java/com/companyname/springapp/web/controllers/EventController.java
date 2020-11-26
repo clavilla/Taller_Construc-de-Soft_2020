@@ -36,7 +36,7 @@ public class EventController {
     }*/
     /*
     //para la vista de todo
-    @RequestMapping(value = "/events.htm")
+    @RequestMapping(value = "/events.htm", method = RequestMethod.GET)
     public ModelAndView handleRequest() {
 	Map<String, Object> myModel = new HashMap<String, Object>();
 	return new ModelAndView("events", "model", myModel);
@@ -44,18 +44,14 @@ public class EventController {
 
     @RequestMapping(value="/events.htm")
     public ModelAndView handleRequest() {
-        //String now = (new Date()).toString();
-		//logger.info("Returning hello view with " + now);
-		
         Map<String, Object> myModel = new HashMap<String, Object>();
-        //myModel.put("now", now);
         myModel.put("events", this.eventManager.getAll());
 
         return new ModelAndView("events", "model", myModel);
     }
-    
+  
     //modificar evento
-    @RequestMapping(value = "/events.htm", params = { 
+    @RequestMapping(value = "/events2.htm", params = { 
 	    "id", 
 	    "idType", 
 	    "name", 
@@ -82,7 +78,7 @@ public class EventController {
 
     
   //eliminar evento
-    @RequestMapping(value = "/events.htm", params = "id", method = RequestMethod.GET)
+    @RequestMapping(value = "/events2.htm", params = "id", method = RequestMethod.GET)
     public String handleRequestBorra(@RequestParam("id") int id) {
 
 	eventManager.delete(id);
