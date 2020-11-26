@@ -26,5 +26,7 @@ public class SpringappWebConfig {
 		internalResourceViewResolver.setPrefix("/WEB-INF/views/");
 		internalResourceViewResolver.setSuffix(".jsp");
 		return internalResourceViewResolver;
+		
+		// Campa's comment here
 	}
 }
