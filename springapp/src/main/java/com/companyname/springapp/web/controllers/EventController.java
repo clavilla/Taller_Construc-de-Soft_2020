@@ -36,10 +36,10 @@ public class EventController {
     }*/
     
     //para la vista de todo
-    @RequestMapping(value = "/event.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/events.htm", method = RequestMethod.POST)
     public ModelAndView handleRequest() {
 	Map<String, Object> myModel = new HashMap<String, Object>();
-	return new ModelAndView("event", "model", myModel);
+	return new ModelAndView("events", "model", myModel);
     }
 
     

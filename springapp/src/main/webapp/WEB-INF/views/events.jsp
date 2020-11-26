@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/views/include.jsp"%>
 <html>
 <head>
-<title>Lista de eventos</title>
+
 </head>
 <body>
     <div class="container">
@@ -23,4 +23,9 @@
             </div>
         </div>
     </div>
+        <h3>Products</h3>
+    <c:forEach items="${model.events}" var="event">
+      <c:out value="${event.description}"/> <i>$<c:out value="${event.id}"/></i><br><br>
+    </c:forEach>
+ </body>   
 </html>

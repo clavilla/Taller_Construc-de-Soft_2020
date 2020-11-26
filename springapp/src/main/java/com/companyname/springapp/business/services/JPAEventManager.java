@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.companyname.springapp.business.entities.Event;
 import com.companyname.springapp.business.repositories.EventRepository;
 
-
+@Service
 public class JPAEventManager implements EventManager{
 	
 	@Autowired
