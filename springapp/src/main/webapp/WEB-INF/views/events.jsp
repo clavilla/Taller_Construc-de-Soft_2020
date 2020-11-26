@@ -1,39 +1,5 @@
 <%@ include file="/WEB-INF/views/include.jsp"%>
 
-<!--  
-<html>
-<head>
-
-</head>
-<body>
-    <div class="container">
-        <div class="card border-info">
-            <div class="card-body">
-                <form method="POST">
-                    <label>Nombre</label>
-                    <input type="text" name="nombre" class="form-control" value="<c:out value=""/>">
-                    <label>Descripcion</label>
-                    <input type="text" name="descripcion" class="form-control" value="<c:out value=""/>">
-                    <label>Inicio</label>
-                    <input type="text" name="inicio" class="form-control" value="<c:out value=""/>">
-                    <label>Fin</label>
-                    <input type="text" name="fin" class="form-control" value="<c:out value=""/>">
-                    <br>
-                    <input type="submit" value="Nuevo" class="btn btn-success">
-                    <a href="index.htm">Inicio</a>
-                </form>
-            </div>
-        </div>
-    </div>
-        <h3>Products</h3>
-    <c:forEach items="${model.events}" var="event">
-      <c:out value="${event.description}"/> <i>$<c:out value="${event.id}"/></i><br><br>
-    </c:forEach>
- </body>   
-</html>
--->
-
-
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
@@ -69,11 +35,31 @@
 				<div>
 					<h1 class="text-white mb-3">Eventos Próximos</h1>
 					<div class="row"></div>
-					<c:forEach items="${model.events}" var="event">
-      <c:out value="${event.description}"/> <i>$<c:out value="${event.id}"/></i><br><br>
-    </c:forEach>
-				</div>
 
+					<c:forEach items="${model.events}" var="event">
+					
+						<div class='col-md-6 col-lg-4 mb-4'>
+							<div class='card'>
+								<img src='asdf' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'>
+								<div class='card-body'>
+									<a href='#' class='h5 card-title stretched-link text-dark'><c:out value="${event.name}" /></a>
+									<p class='card-text'><c:out value="${event.description}" /></p>
+								</div>
+								<ul class='list-group list-group-flush'>
+			                        <li class='list-group-item'>Duración: <c:out value="${event.duration}" /></li>
+			                      </ul>
+							</div>
+						</div>
+					</c:forEach>
+
+					<c:forEach items="${model.events}" var="event">
+						<c:out value="${event.description}" />
+						<i>$<c:out value="${event.id}" /></i>
+						<br>
+						<br>
+					</c:forEach>
+
+				</div>
 			</div>
 		</div>
 	</section>
