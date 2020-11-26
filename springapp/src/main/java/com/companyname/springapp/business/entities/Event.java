@@ -14,115 +14,152 @@ import java.sql.Time;
 @Table(name = "eventos")
 public class Event {
 
-	@Id
+    @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+    // @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @Column(name = "idType")
+    private Integer idType;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "duration")
+    private String duration;
+
+    @Column(name = "endDate")
+    private String endDate;
+
+    @Column(name = "dayQuantity")
+    private String dayQuantity;
+
+    @Column(name = "startDate")
+    private String startDate;
+
+    @Column(name = "time")
+    private String time;
+
+    public Event() {
+
+    }
+
+    public Integer getId() {
+	return id;
+    }
+
+    public void setId(Integer id) {
+	this.id = id;
+    }
+
+    public Integer getIdType() {
+	return idType;
+    }
+
+    public void setIdType(Integer idType) {
+	this.idType = idType;
+    }
+
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String name) {
+	this.name = name;
+    }
+
+    public String getDescription() {
+	return description;
+    }
+
+    public void setDescription(String description) {
+	this.description = description;
+    }
+
+    public String getDuration() {
+	return duration;
+    }
+
+    public void setDuration(String duration) {
+	this.duration = duration;
+    }
+
+    public String getEndDate() {
+	return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+	this.endDate = endDate;
+    }
+
+    public String getDayQuantity() {
+	return dayQuantity;
+    }
+
+    public void setDayQuantity(String dayQuantity) {
+	this.dayQuantity = dayQuantity;
+    }
+
+    public String getStartDate() {
+	return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+	this.startDate = startDate;
+    }
+
+    public String getTime() {
+	return time;
+    }
+
+    public void setTime(String time) {
+	this.time = time;
+    }
+
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("id: " + id + ";");
+        buffer.append("idType: " + idType + ";");
+        buffer.append("name: " + name + ";");
+        buffer.append("description: " + description + ";");
+        buffer.append("duration: " + duration + ";");
+        buffer.append("endDate: " + endDate + ";");
+        buffer.append("dayQuantity: " + dayQuantity + ";");
+        buffer.append("startDate: " + startDate + ";");
+        buffer.append("time: " + time + ";");
+        	    return buffer.toString();
+    }
+    
+    //constructor para modificar evento
+    public Event(Integer id, Integer idType, String name, String description, String duration, String endDate,
+	    String dayQuantity, String startDate, String time) {
+	super();
+	this.id = id;
+	this.idType = idType;
+	this.name = name;
+	this.description = description;
+	this.duration = duration;
+	this.endDate = endDate;
+	this.dayQuantity = dayQuantity;
+	this.startDate = startDate;
+	this.time = time;
+    }
 	
-	@Column(name = "id_tipo")
-	private Integer idType;
+    //constructor para nuevo evento
+    public Event(Integer idType, String name, String description, String duration, String endDate,
+	    String dayQuantity, String startDate, String time) {
+	super();
+	this.idType = idType;
+	this.name = name;
+	this.description = description;
+	this.duration = duration;
+	this.endDate = endDate;
+	this.dayQuantity = dayQuantity;
+	this.startDate = startDate;
+	this.time = time;
+    }
 	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "descripcion")
-	private String description;
-	
-	@Column(name = "duracion")
-	private String duration;
-	
-	@Column(name = "fecha_fin")
-	private Date endDate;
-	
-	@Column(name = "dias")
-	private String dayQuantity;
-	
-	@Column(name = "fecha_inicio")
-	private Date startDate;
-	
-	@Column(name = "hora")
-	private Time time;
-	
-	public Event() {
-		
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getIdType() {
-		return idType;
-	}
-
-	public void setIdType(Integer idType) {
-		this.idType = idType;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getDuration() {
-		return duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public String getDayQuantity() {
-		return dayQuantity;
-	}
-
-	public void setDayQuantity(String dayQuantity) {
-		this.dayQuantity = dayQuantity;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Time getTime() {
-		return time;
-	}
-
-	public void setTime(Time time) {
-		this.time = time;
-	}
-
-	@Override
-	public String toString() {
-		return "Event [id=" + id + ", idType=" + idType + ", name=" + name + ", description=" + description
-				+ ", duration=" + duration + ", endDate=" + endDate + ", dayQuantity=" + dayQuantity + ", startDate="
-				+ startDate + ", time=" + time + "]";
-	}
 }

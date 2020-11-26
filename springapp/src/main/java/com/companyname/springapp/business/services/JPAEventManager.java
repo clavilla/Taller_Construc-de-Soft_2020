@@ -8,16 +8,11 @@ import org.springframework.stereotype.Service;
 import com.companyname.springapp.business.entities.Event;
 import com.companyname.springapp.business.repositories.EventRepository;
 
+
 public class JPAEventManager implements EventManager{
 	
 	@Autowired
-    private EventRepository eventRepository;
-
-	@Override
-	public boolean add(Event event) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	private EventRepository eventRepository;
 
 	@Override
 	public List<Event> getAll() {
@@ -25,17 +20,31 @@ public class JPAEventManager implements EventManager{
 	}
 
 	@Override
-	public boolean update(Event event) {
-		// TODO Auto-generated method stub
-		return false;
+	public void add(int idType, String name, String description, 
+		String duration, String endDate, String dayQuantity, 
+		String startDate, String time) {
+	    eventRepository.save(new Event(idType, name, description, duration, endDate, dayQuantity, startDate, time));
 	}
 
 	@Override
-	public boolean delete(Event event) {
-		// TODO Auto-generated method stub
-		return false;
+	public void update(int id, int idType, String name, String description, 
+		String duration, String endDate,String dayQuantity, 
+		String startDate, String time) {
+	    eventRepository.save(new Event(id, idType, name, description, duration, endDate,
+		    dayQuantity, startDate, time));
+	    
 	}
-	
-	
+
+	@Override
+	public void delete(int id) {
+	    eventRepository.delete(eventRepository.findById(id).get());
+	    
+	}
+
+	@Override
+	public Event getEvento(int id) {
+	    return eventRepository.findById(id).get();
+	}
+		
 
 }

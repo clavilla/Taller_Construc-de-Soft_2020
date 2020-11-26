@@ -8,26 +8,63 @@ public class SimpleEventManager implements EventManager{
 	
 	private List<Event> events;
 
-	@Override
-	public boolean add(Event event) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
 
-	@Override
-	public List<Event> getAll() {
-		return events;
-	}
+    @Override
+    public List<Event> getAll() {
+	return events;
+    }
+    
+    @Override
+    public void add(int idType, String name, String description, String duration, String endDate, String dayQuantity,
+	    String startDate, String time) {
+	// TODO Auto-generated method stub
+	Event event = new Event();
+	event.setIdType(idType);
+	event.setName(name);
+	event.setDescription(description);
+	event.setDuration(duration);
+	event.setEndDate(endDate);
+	event.setDayQuantity(dayQuantity);
+	event.setStartDate(startDate);
+	event.setTime(time);
+	
+	events.add(event);
+    }
 
-	@Override
-	public boolean update(Event event) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public void update(int id, int idType, String name, String description, String duration, String endDate,
+	    String dayQuantity, String startDate, String time) {
+	// TODO Auto-generated method stub
+	Event event = new Event();
+	
+	event = this.getEvento(id);
+	
+	event.setIdType(idType);
+	event.setName(name);
+	event.setDescription(description);
+	event.setDuration(duration);
+	event.setEndDate(endDate);
+	event.setDayQuantity(dayQuantity);
+	event.setStartDate(startDate);
+	event.setTime(time);
+    }
 
-	@Override
-	public boolean delete(Event event) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
+    @Override
+    public void delete(int id) {
+        if (events != null) {
+            events.remove(id);
+        }  
+    }
+
+
+    @Override
+    public Event getEvento(int id) {
+	return events.get(id);
+    }
+	
 }

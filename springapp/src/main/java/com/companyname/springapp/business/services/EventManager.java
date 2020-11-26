@@ -6,12 +6,29 @@ import com.companyname.springapp.business.entities.Event;
 
 public interface EventManager {
 
-	public boolean add(Event event);
+    /*	private Integer id;
+	private Integer idType;
+	private String name;
+	private String description;
+	private String duration;
+	private String endDate;
+	private String dayQuantity;
+	private String startDate;
+	private String time;   */
+    
+	public void add(int idType, String name, String description, 
+		String duration, String endDate, String dayQuantity,
+		String startDate, String time);
 
 	public List<Event> getAll();
 
-	public boolean update(Event event);
+	public void update(int id, int idType, String name, String description, 
+		String duration, String endDate,String dayQuantity, 
+		String startDate, String time);
 
-	public boolean delete(Event event);
+	public void delete(int id);
+	
+	public Event getEvento(int id) ;
 
+	
 }
