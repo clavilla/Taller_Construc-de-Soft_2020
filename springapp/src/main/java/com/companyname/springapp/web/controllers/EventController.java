@@ -34,15 +34,25 @@ public class EventController {
 	myModel.put("event", eventManager.getEvento(id));
 	return new ModelAndView("events", "model", myModel);
     }*/
-    
+    /*
     //para la vista de todo
-    @RequestMapping(value = "/events.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "/events.htm")
     public ModelAndView handleRequest() {
 	Map<String, Object> myModel = new HashMap<String, Object>();
 	return new ModelAndView("events", "model", myModel);
-    }
+    }*/
 
-    
+    @RequestMapping(value="/events.htm")
+    public ModelAndView handleRequest() {
+        //String now = (new Date()).toString();
+		//logger.info("Returning hello view with " + now);
+		
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        //myModel.put("now", now);
+        myModel.put("events", this.eventManager.getAll());
+
+        return new ModelAndView("events", "model", myModel);
+    }
     
     //modificar evento
     @RequestMapping(value = "/events.htm", params = { 
