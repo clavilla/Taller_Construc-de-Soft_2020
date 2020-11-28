@@ -42,6 +42,9 @@ public class Event {
 
     @Column(name = "time")
     private String time;
+    
+   // @Column(name = "img")
+    //private String img;
 
     public Event() {
 
