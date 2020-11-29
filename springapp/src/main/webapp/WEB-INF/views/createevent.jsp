@@ -90,20 +90,7 @@
 				
 
              
-                <label class="form-control">Vie</label>
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input" disabled id="sab" name="sab" value="S ">
-                  </div>
-                </div>
-                <label class="form-control">Sáb</label>
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input" disabled id="dom" name="dom" value="D ">
-                  </div>  
-                </div>
-                <label class="form-control">Dom</label> -->
-              </div>  
+                
 
               <label>¿Cuando comenzará?</label>
               <div class="input-group mb-3">
