@@ -48,8 +48,11 @@
 								<ul class='list-group list-group-flush'>
 			                        <li class='list-group-item'>Duración: <c:out value="${event.duration}" /></li>
 			                      </ul>
+			                      <p class='card-text'><c:out value="${event.id}" /></p>
 							</div>
 						</div>
+						<input type="submit" value="Modificar" class="btn btn-success">
+						<input type="submit" value="Eliminar" class="btn btn-success">
 					</c:forEach>
 				</div>
 			</div>

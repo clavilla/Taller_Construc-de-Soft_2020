@@ -38,7 +38,6 @@ public class JPAEventManager implements EventManager{
 	@Override
 	public void delete(int id) {
 	    eventRepository.delete(eventRepository.findById(id).get());
-	    
 	}
 
 	@Override

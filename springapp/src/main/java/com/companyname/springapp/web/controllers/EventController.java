@@ -51,7 +51,7 @@ public class EventController {
     }
   
     //modificar evento
-    @RequestMapping(value = "/events2.htm", params = { 
+    @RequestMapping(value = "/events.htm", params = { 
 	    "id", 
 	    "idType", 
 	    "name", 
@@ -78,9 +78,8 @@ public class EventController {
 
     
   //eliminar evento
-    @RequestMapping(value = "/events2.htm", params = "id", method = RequestMethod.GET)
+    @RequestMapping(value = "/events.htm", params = "id", method = RequestMethod.GET)
     public String handleRequestBorra(@RequestParam("id") int id) {
-
 	eventManager.delete(id);
 	return "redirect:/index.htm";
     }

@@ -16,6 +16,8 @@ public class Usuario {
     private String usuario;
     private String contrasenia;
     private String nombre;
+    
+    // en db esta int, varchar, varchar, varchar
 
     public Usuario() {
 
