@@ -11,17 +11,16 @@ import javax.persistence.Table;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     private String usuario;
     private String contrasenia;
     private String nombre;
-    
-    
+
     public Usuario() {
 
     }
-    
+
     public Usuario(int id, String nombre, String usuario, String password) {
 	this.id = id;
 	this.nombre = nombre;
@@ -29,7 +28,14 @@ public class Usuario {
 	this.contrasenia = password;
     }
 
-    //para buscar en la bd
+    // para registrar
+    public Usuario(String nombre, String usuario, String password) {
+	this.nombre = nombre;
+	this.usuario = usuario;
+	this.contrasenia = password;
+    }
+
+    // para buscar en la bd
     public Usuario(String usuario, String password) {
 	this.usuario = usuario;
 	this.contrasenia = password;

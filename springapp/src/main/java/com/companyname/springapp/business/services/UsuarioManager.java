@@ -9,13 +9,9 @@ import com.companyname.springapp.business.entities.Usuario;
 
 public interface UsuarioManager {
 
-   
-    /*
-    @Query("select * from usuarios u where u.usuario = :usuario and u.contrasenia = :contrasenia")
-    public void guardarUsuario(@Param("usuario") String usuario,
-                               @Param("contrasenia") String contrasenia);
-    */
+  
     Usuario findByUserPass (String usuario, String contrasenia);
     
+    public void registrarUsuario(String nombre, String usuario, String contrasenia);
     
 }

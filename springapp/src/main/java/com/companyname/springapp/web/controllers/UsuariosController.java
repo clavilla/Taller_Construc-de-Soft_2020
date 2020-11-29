@@ -33,6 +33,20 @@ public class UsuariosController {
 	return "redirect:/events.htm";
     }
     
+    @RequestMapping(value = "/signup.htm", method = RequestMethod.GET)
+    public ModelAndView handleRequest2() {
+	Map<String, Object> myModel = new HashMap<String, Object>();
+	return new ModelAndView("signup", "model", myModel);
+    }
     
-
+    @RequestMapping(value = "/signup.htm", params = { "nombre", "usuario", "contrasenia"}, method = RequestMethod.POST)
+    public String onSubmitNuevo(
+	    @RequestParam("nombre") String nombre, 
+	    @RequestParam("usuario") String usuario, 
+	    @RequestParam("contrasenia") String contrasenia) {
+	usuarioManager.registrarUsuario(nombre, usuario, contrasenia);
+	return "redirect:/events.htm";
+    }
+   
+    
 }

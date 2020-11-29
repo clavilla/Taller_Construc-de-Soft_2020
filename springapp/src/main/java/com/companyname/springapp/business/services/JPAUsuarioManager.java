@@ -17,7 +17,7 @@ public class JPAUsuarioManager implements UsuarioManager {
     public Usuario findByUsuario(String usuario) {
 	return usuarioRepository.findByUsuario(usuario).get(0);
     }
-    
+     
     @Override
     public Usuario findByUserPass(String usuario, String contrasenia) {
 		Usuario resp = null;
@@ -34,5 +34,11 @@ public class JPAUsuarioManager implements UsuarioManager {
 		};
 		return resp;
 	}
+
+    @Override
+    public void registrarUsuario(String nombre, String usuario, String contrasenia) {
+	usuarioRepository.save(new Usuario (nombre, usuario, contrasenia));
+	
+    }
 
 }

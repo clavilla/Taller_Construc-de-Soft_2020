@@ -11,7 +11,6 @@ import com.companyname.springapp.business.entities.Usuario;
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 
-    //Usuario findByUserPass(String usuario, String contrasenia);
     List <Usuario> findByUsuario(String usuario);
 
 }
