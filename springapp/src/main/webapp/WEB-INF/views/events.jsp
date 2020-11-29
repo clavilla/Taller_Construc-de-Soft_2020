@@ -28,13 +28,33 @@
 <!--  body class="bg-dark" onload="datos_iniciales()">-->
 <body class="bg-dark">
 
+ <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="box-shadow: 2px 2px 5px #000">
+      <div class="container">
+        <a class="navbar-brand" href="index.php">Centro Cultural Sumate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="createevent.htm">Ir a crear evento</a>
+            </li>
+            <a class="btn btn-dark ml-3" href="#">Cerrar sesión</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
 	<!-- EVENTOS -->
 	<section id="eventos" class="container pt-5">
 		<div class="pt-5">
 			<div class="mt-3">
 				<div>
 					<h1 class="text-white mb-3">Eventos Próximos</h1>
+					
 					<div class="row"></div>
+				
 
 					<c:forEach items="${model.events}" var="event">
 					

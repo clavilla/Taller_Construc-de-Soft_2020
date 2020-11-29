@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="eventos_en_curso.php">Volver a Eventos</a>
+              <a class="nav-link" href="events.htm">Volver a Eventos</a>
             </li>
             <a class="btn btn-dark ml-3" href="#">Cerrar sesión</a>
           </ul>
