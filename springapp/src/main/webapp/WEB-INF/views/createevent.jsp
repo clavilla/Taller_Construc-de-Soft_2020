@@ -46,14 +46,14 @@
             <h1>Nuevo evento</h1>
             <label>Ingresa los datos del evento a crear</label>
 
-            <form class="" action="crear_evento.php" method="post">
+            <form class=""  method="POST">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                       <i class="fas fa-file-signature"></i>
                   </div>
                 </div>
-                <input required type="text" name="nombre_evento" value="" class="form-control" placeholder="Nombre del evento">
+                <input required type="text" name="name" value="" class="form-control" placeholder="Nombre del evento">
               </div>
 
               <div class="input-group mb-3">
@@ -63,9 +63,9 @@
                   </div>
                 </div>
 
-                  <select required class="form-control" id="tipo_evento" name="tipo_evento">
-                    <option disabled selected>Selecciona un tipo de evento</option>
-                    <!--  CODIGO PHP-->
+                  <select required class="form-control" id="id" name="idType">
+                    <option >Selecciona un tipo de evento</option>
+                    <!--  TRAER OPCIONES DE TABLA TIPOS_EVENTO-->
                   </select>
               </div>
 
@@ -75,7 +75,7 @@
                     <i class="fas fa-pencil-alt"></i>
                   </div>
                 </div>
-                <textarea required name="descripcion" rows="8" cols="80" placeholder="Descripción del evento" class="form-control"></textarea>
+                <textarea required name="description" rows="8" cols="80" placeholder="Descripción del evento" class="form-control"></textarea>
               </div>
 
               <div class="form-check form-check-inline">
@@ -99,7 +99,7 @@
                     <i class="fas fa-calendar-alt"></i>
                   </div>
                 </div>
-                <input required type="date" name="fecha_inicio" id="fecha_inicio" value="" class="form-control" placeholder="Fecha de inicio">
+                <input required type="date" name="startDate" id="fecha_inicio" value="" class="form-control" placeholder="Fecha de inicio">
                 <div class="mx-3 mt-1">
                   <label> en el horario </label>
                 </div>
@@ -108,7 +108,7 @@
                     <i class="far fa-clock"></i>
                   </div>
                 </div>
-                <input required type="time" name="hora" id="hora" value="" class="form-control" placeholder="Hora">
+                <input required type="time" name="time" id="time" value="" class="form-control" placeholder="Hora">
               </div>
 
               <label>¿Cuándo finalizará?</label>
@@ -118,7 +118,7 @@
                     <i class="fas fa-calendar-alt"></i>
                   </div>
                 </div>
-                <input required type="date" name="fecha_fin" id="fecha_fin" value="" class="form-control" placeholder="Fecha de finalización">
+                <input required type="date" name="endDate" id="endDate" value="" class="form-control" placeholder="Fecha de finalización">
               </div>
 
               <div class="form-check form-check-inline">
@@ -131,8 +131,8 @@
                     <i class="fas fa-hourglass-half"></i>
                   </div>
                 </div>
-                <input required type="number" name="duracion_numero" value="" class="form-control" placeholder="Duración">
-                <select required class="form-control" name="duracion_tipo" id="tipo_evento">
+                <input required type="number" name="dayQuantity" value="" class="form-control" placeholder="Duración">
+                <select required class="form-control" name="duration" id="tipo_evento">
                   <option disabled selected>Selecciona la unidad de tiempo</option>
                   <option value="minutos">Minutos</option>
                   <option value="hora(s)">Horas</option>

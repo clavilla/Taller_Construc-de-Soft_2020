@@ -60,7 +60,7 @@ public class EventController {
     }
   
     //modificar evento
-    @RequestMapping(value = "/events2.htm", params = { 
+    @RequestMapping(value = "/events.htm", params = { 
 	    "id", 
 	    "idType", 
 	    "name", 
@@ -87,7 +87,7 @@ public class EventController {
 
     
   //eliminar evento
-    @RequestMapping(value = "/events2.htm", params = "id", method = RequestMethod.GET)
+    @RequestMapping(value = "/events.htm", params = "id", method = RequestMethod.GET)
     public String handleRequestBorra(@RequestParam("id") int id) {
 
 	eventManager.delete(id);
@@ -95,7 +95,7 @@ public class EventController {
     }
 
     //agregar evento
-    @RequestMapping(value = "/events.htm", params = {  
+    @RequestMapping(value = "/createevent.htm", params = {  
 	    "idType", 
 	    "name", 
 	    "description",
@@ -114,7 +114,7 @@ public class EventController {
 	    @RequestParam("startDate") String startDate,
 	    @RequestParam("time") String time) {
 	eventManager.add(idType, name, description, duration, endDate, dayQuantity, startDate, time);
-	return "redirect:/index.htm";
+	return "redirect:/events.htm";
     }
 
 }
