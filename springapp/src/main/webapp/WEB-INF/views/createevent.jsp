@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="events.htm">Volver a Eventos</a>
+              <a class="nav-link" href="events.htm">Volver a eventos</a>
             </li>
             <a class="btn btn-dark ml-3" href="#">Cerrar sesión</a>
           </ul>
@@ -92,7 +92,7 @@
              
                 
 
-              <label>¿Cuando comenzará?</label>
+              <label>¿Cuándo comenzará?</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
@@ -111,7 +111,7 @@
                 <input required type="time" name="hora" id="hora" value="" class="form-control" placeholder="Hora">
               </div>
 
-              <label>¿Cuando finalizará?</label>
+              <label>¿Cuándo finalizará?</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
