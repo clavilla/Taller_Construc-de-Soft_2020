@@ -13,10 +13,10 @@ import java.sql.Time;
 @Entity
 @Table(name = "eventos")
 public class Event {
-
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "idType")
@@ -42,6 +42,9 @@ public class Event {
 
     @Column(name = "time")
     private String time;
+    
+   // @Column(name = "img")
+    //private String img;
 
     public Event() {
 

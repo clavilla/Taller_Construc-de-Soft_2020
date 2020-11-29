@@ -27,7 +27,11 @@
 </head>
 <!--  body class="bg-dark" onload="datos_iniciales()">-->
 <body class="bg-dark">
-
+	
+	<form action="createevent.htm">
+    <input type="submit" value="Ir a crear evento" />
+	</form>
+	
 	<!-- EVENTOS -->
 	<section id="eventos" class="container pt-5">
 		<div class="pt-5">
@@ -40,10 +44,11 @@
 					
 						<div class='col-md-6 col-lg-4 mb-4'>
 							<div class='card'>
-								<img src='asdf' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'>
+								<!-- <img src='abcv' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'> -->
 								<div class='card-body'>
 									<a href='#' class='h5 card-title stretched-link text-dark'><c:out value="${event.name}" /></a>
 									<p class='card-text'><c:out value="${event.description}" /></p>
+									<p class='card-text'><c:out value="Inicia: ${event.startDate}" /></p>
 								</div>
 								<ul class='list-group list-group-flush'>
 			                        <li class='list-group-item'>Duración: <c:out value="${event.duration}" /></li>

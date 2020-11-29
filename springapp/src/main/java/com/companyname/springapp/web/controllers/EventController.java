@@ -41,13 +41,20 @@ public class EventController {
 	Map<String, Object> myModel = new HashMap<String, Object>();
 	return new ModelAndView("events", "model", myModel);
     }*/
-
+    
     @RequestMapping(value="/events.htm")
     public ModelAndView handleRequest() {
         Map<String, Object> myModel = new HashMap<String, Object>();
         myModel.put("events", this.eventManager.getAll());
 
         return new ModelAndView("events", "model", myModel);
+    }
+    
+    
+    @RequestMapping(value="/createevent.htm")
+    public ModelAndView handleRequest2() {
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        return new ModelAndView("createevent", "model", myModel);
     }
   
     //modificar evento
@@ -85,7 +92,7 @@ public class EventController {
     }
 
     //agregar evento
-    @RequestMapping(value = "/events.htm", params = {  
+    @RequestMapping(value = "/createevent.htm", params = {  
 	    "idType", 
 	    "name", 
 	    "description",
@@ -104,7 +111,7 @@ public class EventController {
 	    @RequestParam("startDate") String startDate,
 	    @RequestParam("time") String time) {
 	eventManager.add(idType, name, description, duration, endDate, dayQuantity, startDate, time);
-	return "redirect:/index.htm";
+	return "redirect:/events.htm";
     }
 
 }
