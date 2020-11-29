@@ -62,15 +62,27 @@
 							<div class='card'>
 								<!-- <img src='abcv' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'> -->
 								<div class='card-body'>
-									<a href='#' class='h5 card-title stretched-link text-dark'><c:out value="${event.name}" /></a>
+									<a href='#' class='h5 card-title stretched-link text-dark'><c:out value="${event.id} - ${event.name}" /></a>
 									<p class='card-text'><c:out value="${event.description}" /></p>
 									<p class='card-text'><c:out value="Inicia: ${event.startDate}" /></p>
 								</div>
 								<ul class='list-group list-group-flush'>
 			                        <li class='list-group-item'>Duración: <c:out value="${event.duration}" /></li>
+			                        
 			                      </ul>
-							</div>
+			                    
+			                      <div>
+			                      <input type="submit" value="Modificar" class="btn btn-info btn-block">
+			                      
+								<input type="submit" value="Eliminar" class="btn btn-danger btn-block">
+								</div>
+							</div>								
 						</div>
+					</div>							
+				</div>
+						
+				
+						
 					</c:forEach>
 				</div>
 			</div>
