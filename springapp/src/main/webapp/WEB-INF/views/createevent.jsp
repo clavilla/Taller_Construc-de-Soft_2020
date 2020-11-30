@@ -66,7 +66,6 @@
                   <select required class="form-control" id="id" name="idType">
                     <option >Selecciona un tipo de evento</option>
                     <!--  TRAER OPCIONES DE TABLA TIPOS_EVENTO-->
-                
                   </select>
               </div>
 
@@ -137,7 +136,7 @@
                   <option disabled selected>Selecciona la unidad de tiempo</option>
                   <option value="minutos">Minutos</option>
                   <option value="hora(s)">Horas</option>
-                </select>
+                </select> -->
               </div>
 
               <input type="submit" name="crear" class="btn btn-light btn-lg btn-block" value="Crear"></input>

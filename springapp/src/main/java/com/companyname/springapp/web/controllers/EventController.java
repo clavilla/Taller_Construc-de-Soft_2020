@@ -49,6 +49,13 @@ public class EventController {
 
         return new ModelAndView("events", "model", myModel);
     }
+    
+    
+    @RequestMapping(value="/createevent.htm")
+    public ModelAndView handleRequest2() {
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        return new ModelAndView("createevent", "model", myModel);
+    }
   
 
     @RequestMapping(value="/createevent.htm")
@@ -89,7 +96,6 @@ public class EventController {
   //eliminar evento
     @RequestMapping(value = "/events.htm", params = "id", method = RequestMethod.GET)
     public String handleRequestBorra(@RequestParam("id") int id) {
-
 	eventManager.delete(id);
 	return "redirect:/index.htm";
     }
