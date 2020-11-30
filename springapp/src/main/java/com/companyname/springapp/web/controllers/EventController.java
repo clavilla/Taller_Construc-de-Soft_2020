@@ -46,16 +46,14 @@ public class EventController {
     public ModelAndView handleRequest() {
         Map<String, Object> myModel = new HashMap<String, Object>();
         myModel.put("events", this.eventManager.getAll());
-
         return new ModelAndView("events", "model", myModel);
     }
-  
-
+    
+    
     @RequestMapping(value="/createevent.htm")
     public ModelAndView handleRequest2() {
         Map<String, Object> myModel = new HashMap<String, Object>();
-        myModel.put("createevent", this.eventManager.getAll());
-
+        //myModel.put("createevent", this.eventManager.getAll());
         return new ModelAndView("createevent", "model", myModel);
     }
   
@@ -89,7 +87,6 @@ public class EventController {
   //eliminar evento
     @RequestMapping(value = "/events.htm", params = "id", method = RequestMethod.GET)
     public String handleRequestBorra(@RequestParam("id") int id) {
-
 	eventManager.delete(id);
 	return "redirect:/index.htm";
     }

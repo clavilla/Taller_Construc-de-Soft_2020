@@ -66,7 +66,6 @@
                   <select required class="form-control" id="id" name="idType">
                     <option >Selecciona un tipo de evento</option>
                     <!--  TRAER OPCIONES DE TABLA TIPOS_EVENTO-->
-                
                   </select>
               </div>
 

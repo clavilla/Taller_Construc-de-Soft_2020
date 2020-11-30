@@ -13,7 +13,7 @@ import java.sql.Time;
 @Entity
 @Table(name = "eventos")
 public class Event {
-
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
  	@GeneratedValue(strategy = GenerationType.IDENTITY)

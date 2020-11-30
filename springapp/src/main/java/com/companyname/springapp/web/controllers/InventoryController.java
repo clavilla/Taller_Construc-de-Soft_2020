@@ -16,7 +16,7 @@ import com.companyname.springapp.business.services.ProductManager;
 
 @Controller
 public class InventoryController {
-
+/*
     protected final Log logger = LogFactory.getLog(getClass());
 
     @Autowired
@@ -29,8 +29,8 @@ public class InventoryController {
 		
         Map<String, Object> myModel = new HashMap<String, Object>();
         //myModel.put("now", now);
-        myModel.put("events", this.eventManager.getAll());
+        
 
-        return new ModelAndView("events", "model", myModel);
-    }
+        return new ModelAndView("login", "model", myModel);
+    }*/
 }
