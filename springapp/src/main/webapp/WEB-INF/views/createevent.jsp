@@ -78,13 +78,13 @@
 							</div>
 
 
-					            <select required class="form-control" id="id" name="idType">
-                    <option >
-                    <c:forEach items="${model.eventType}" var="event">
-                    <option><c:out value="${event.tipo}" /></option>
-    				</c:forEach>
-    				</option>
-                    </select>
+							<select required class="form-control" id="id" name="idType">
+								<option>
+									<c:forEach items="${model.eventType}" var="event">
+										<option><c:out value="${event.tipo}" /></option>
+									</c:forEach>
+								</option>
+							</select>
 						</div>
 
 						<div class="input-group mb-3">

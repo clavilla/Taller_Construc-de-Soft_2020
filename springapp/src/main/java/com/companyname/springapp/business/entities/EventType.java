@@ -16,19 +16,17 @@ public class EventType {
 
     @Id
     @Column(name = "id")
- 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "tipo")
-    private Integer tipo;
+    private String tipo;
 
     @Column(name = "imagen")
     private String imagen;
 
-   
-    
-   // @Column(name = "img")
-    //private String img;
+    // @Column(name = "img")
+    // private String img;
 
     public EventType() {
 
@@ -42,11 +40,11 @@ public class EventType {
 	this.id = id;
     }
 
-    public Integer getTipo() {
+    public String getTipo() {
 	return tipo;
     }
 
-    public void setTipo(Integer tipo) {
+    public void setTipo(String tipo) {
 	this.tipo = tipo;
     }
 
@@ -58,18 +56,13 @@ public class EventType {
 	this.imagen = imagen;
     }
 
-    
-
-
     public String toString() {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("id: " + id + ";");
-        buffer.append("tipo: " + tipo + ";");
-        buffer.append("imagen: " + imagen + ";");
-        
-        	    return buffer.toString();
+	StringBuffer buffer = new StringBuffer();
+	buffer.append("id: " + id + ";");
+	buffer.append("tipo: " + tipo + ";");
+	buffer.append("imagen: " + imagen + ";");
+
+	return buffer.toString();
     }
-    
-    
-	
+
 }

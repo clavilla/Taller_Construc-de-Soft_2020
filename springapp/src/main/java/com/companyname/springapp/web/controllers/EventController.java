@@ -56,7 +56,7 @@ public class EventController {
    @RequestMapping(value="/createevent.htm")
     public ModelAndView handleRequest2() {
         Map<String, Object> myModel = new HashMap<String, Object>();
-        //myModel.put("createevent", this.eventTypeManager.getAll());
+        myModel.put("eventType", this.eventTypeManager.getAll());
         return new ModelAndView("createevent", "model", myModel);
     }
     
