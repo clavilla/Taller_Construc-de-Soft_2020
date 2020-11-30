@@ -136,7 +136,7 @@
                   <option disabled selected>Selecciona la unidad de tiempo</option>
                   <option value="minutos">Minutos</option>
                   <option value="hora(s)">Horas</option>
-                </select> -->
+                </select>
               </div>
 
               <input type="submit" name="crear" class="btn btn-light btn-lg btn-block" value="Crear"></input>
