@@ -20,7 +20,7 @@ public class Event {
     private Integer id;
 
     @Column(name = "idType")
-    private Integer idType;
+    private String idType;
 
     @Column(name = "name")
     private String name;
@@ -58,11 +58,11 @@ public class Event {
 	this.id = id;
     }
 
-    public Integer getIdType() {
+    public String getIdType() {
 	return idType;
     }
 
-    public void setIdType(Integer idType) {
+    public void setIdType(String idType) {
 	this.idType = idType;
     }
 
@@ -137,7 +137,7 @@ public class Event {
     }
     
     //constructor para modificar evento
-    public Event(Integer id, Integer idType, String name, String description, String duration, String endDate,
+    public Event(Integer id, String idType, String name, String description, String duration, String endDate,
 	    String dayQuantity, String startDate, String time) {
 	super();
 	this.id = id;
@@ -152,7 +152,7 @@ public class Event {
     }
 	
     //constructor para nuevo evento
-    public Event(Integer idType, String name, String description, String duration, String endDate,
+    public Event(String idType, String name, String description, String duration, String endDate,
 	    String dayQuantity, String startDate, String time) {
 	super();
 	this.idType = idType;

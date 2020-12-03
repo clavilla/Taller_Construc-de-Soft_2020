@@ -80,7 +80,7 @@ public class EventController {
 	    "time"}, method = RequestMethod.POST)
     public String onSubmit(
 	    @RequestParam("id") int id, 
-	    @RequestParam("idType") int idType,
+	    @RequestParam("idType") String idType,
 	    @RequestParam("name") String name,
 	    @RequestParam("description") String description,
 	    @RequestParam("duration") String duration, 
@@ -112,7 +112,7 @@ public class EventController {
 	    "startDate",
 	    "time" }, method = RequestMethod.POST)
     public String onSubmitNuevo(
-	    @RequestParam("idType") int idType,
+	    @RequestParam("idType") String idType,
 	    @RequestParam("name") String name,
 	    @RequestParam("description") String description,
 	    @RequestParam("duration") String duration, 

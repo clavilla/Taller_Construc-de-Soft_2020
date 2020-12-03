@@ -19,7 +19,7 @@ public class SimpleEventManager implements EventManager{
     }
     
     @Override
-    public void add(int idType, String name, String description, String duration, String endDate, String dayQuantity,
+    public void add(String idType, String name, String description, String duration, String endDate, String dayQuantity,
 	    String startDate, String time) {
 	// TODO Auto-generated method stub
 	Event event = new Event();
@@ -36,7 +36,7 @@ public class SimpleEventManager implements EventManager{
     }
 
     @Override
-    public void update(int id, int idType, String name, String description, String duration, String endDate,
+    public void update(int id, String idType, String name, String description, String duration, String endDate,
 	    String dayQuantity, String startDate, String time) {
 	// TODO Auto-generated method stub
 	Event event = new Event();
