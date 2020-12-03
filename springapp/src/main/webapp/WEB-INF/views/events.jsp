@@ -65,6 +65,7 @@
 									<a href='#' class='h5 card-title stretched-link text-dark'><c:out value="${event.id} - ${event.name}" /></a>
 									<p class='card-text'><c:out value="${event.description}" /></p>
 									<p class='card-text'><c:out value="Inicia: ${event.startDate}" /></p>
+									<img alt="" src="${event.startDate}">
 								</div>
 								<ul class='list-group list-group-flush'>
 			                        <li class='list-group-item'>Duración: <c:out value="${event.duration}" /></li>

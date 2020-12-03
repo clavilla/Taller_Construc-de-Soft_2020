@@ -48,7 +48,7 @@ public class EventType {
 	this.tipo = tipo;
     }
 
-    public String imagen() {
+    public String getImagen() {
 	return imagen;
     }
 

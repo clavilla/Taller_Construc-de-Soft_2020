@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.companyname.springapp.business.repositories.EventTypeRepository;
+
 import java.sql.Date;
 import java.sql.Time;
 
@@ -16,7 +20,7 @@ public class Event {
     //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
- 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "idType")
@@ -43,11 +47,24 @@ public class Event {
     @Column(name = "time")
     private String time;
     
+    private String urlTipo;
+    
    // @Column(name = "img")
     //private String img;
 
+    @Autowired
+    private EventTypeRepository eventTypeRepository;
+    
     public Event() {
 
+    }
+
+    public String getUrlTipo(String tipo) {
+	return eventTypeRepository.getDireccionImagen(tipo);
+    }
+
+    public void setUrlTipo(String urlTipo) {
+        this.urlTipo = urlTipo;
     }
 
     public Integer getId() {
@@ -121,6 +138,8 @@ public class Event {
     public void setTime(String time) {
 	this.time = time;
     }
+    
+    
 
     public String toString() {
         StringBuffer buffer = new StringBuffer();
@@ -164,5 +183,6 @@ public class Event {
 	this.startDate = startDate;
 	this.time = time;
     }
-	
+
+    
 }
