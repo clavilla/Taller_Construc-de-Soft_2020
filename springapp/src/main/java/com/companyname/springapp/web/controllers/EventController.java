@@ -121,6 +121,7 @@ public class EventController {
 	    @RequestParam("dayQuantity") String dayQuantity, 
 	    @RequestParam("startDate") String startDate,
 	    @RequestParam("time") String time) {
+    	duration = dayQuantity + " " + duration;
 	eventManager.add(idType, name, description, duration, endDate, dayQuantity, startDate, time);
 	return "redirect:/events.htm";
     }
