@@ -16,13 +16,13 @@ public interface EventManager {
 	private String startDate;
 	private String time;   */
     
-	public void add(int idType, String name, String description, 
+	public void add(String idType, String name, String description, 
 		String duration, String endDate, String dayQuantity,
 		String startDate, String time);
 
 	public List<Event> getAll();
 
-	public void update(int id, int idType, String name, String description, 
+	public void update(int id, String idType, String name, String description, 
 		String duration, String endDate,String dayQuantity, 
 		String startDate, String time);
 

@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.companyname.springapp.business.repositories.EventTypeRepository;
+
 import java.sql.Date;
 import java.sql.Time;
 
@@ -16,11 +20,11 @@ public class Event {
     //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
- 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "idType")
-    private Integer idType;
+    private String idType;
 
     @Column(name = "name")
     private String name;
@@ -42,10 +46,12 @@ public class Event {
 
     @Column(name = "time")
     private String time;
+   
     
    // @Column(name = "img")
     //private String img;
 
+    
     public Event() {
 
     }
@@ -58,11 +64,11 @@ public class Event {
 	this.id = id;
     }
 
-    public Integer getIdType() {
+    public String getIdType() {
 	return idType;
     }
 
-    public void setIdType(Integer idType) {
+    public void setIdType(String idType) {
 	this.idType = idType;
     }
 
@@ -121,6 +127,8 @@ public class Event {
     public void setTime(String time) {
 	this.time = time;
     }
+    
+    
 
     public String toString() {
         StringBuffer buffer = new StringBuffer();
@@ -137,7 +145,7 @@ public class Event {
     }
     
     //constructor para modificar evento
-    public Event(Integer id, Integer idType, String name, String description, String duration, String endDate,
+    public Event(Integer id, String idType, String name, String description, String duration, String endDate,
 	    String dayQuantity, String startDate, String time) {
 	super();
 	this.id = id;
@@ -152,7 +160,7 @@ public class Event {
     }
 	
     //constructor para nuevo evento
-    public Event(Integer idType, String name, String description, String duration, String endDate,
+    public Event(String idType, String name, String description, String duration, String endDate,
 	    String dayQuantity, String startDate, String time) {
 	super();
 	this.idType = idType;
@@ -164,5 +172,6 @@ public class Event {
 	this.startDate = startDate;
 	this.time = time;
     }
-	
+
+    
 }

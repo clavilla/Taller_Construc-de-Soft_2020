@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 import com.companyname.springapp.business.entities.Event;
 import com.companyname.springapp.business.repositories.EventRepository;
 
+
 @Service
 public class JPAEventManager implements EventManager{
 	
 	@Autowired
 	private EventRepository eventRepository;
+	
+	
 
 	@Override
 	public List<Event> getAll() {
@@ -20,14 +23,14 @@ public class JPAEventManager implements EventManager{
 	}
 
 	@Override
-	public void add(int idType, String name, String description, 
+	public void add(String idType, String name, String description, 
 		String duration, String endDate, String dayQuantity, 
 		String startDate, String time) {
 	    eventRepository.save(new Event(idType, name, description, duration, endDate, dayQuantity, startDate, time));
 	}
 
 	@Override
-	public void update(int id, int idType, String name, String description, 
+	public void update(int id, String idType, String name, String description, 
 		String duration, String endDate,String dayQuantity, 
 		String startDate, String time) {
 	    eventRepository.save(new Event(id, idType, name, description, duration, endDate,

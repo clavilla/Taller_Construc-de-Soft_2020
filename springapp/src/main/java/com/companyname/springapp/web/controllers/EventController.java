@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.companyname.springapp.business.services.EventManager;
+import com.companyname.springapp.business.services.EventTypeManager;
 
 @Controller
 public class EventController {
@@ -26,6 +27,8 @@ public class EventController {
     @Autowired
     private EventManager eventManager;
     
+    @Autowired
+    private EventTypeManager eventTypeManager;
     /*
     //para la vista de unico evento
         @RequestMapping(value = "/events.htm", params = "id", method = RequestMethod.GET)
@@ -46,16 +49,24 @@ public class EventController {
     public ModelAndView handleRequest() {
         Map<String, Object> myModel = new HashMap<String, Object>();
         myModel.put("events", this.eventManager.getAll());
+        myModel.put("eventType", this.eventTypeManager.getAll());
         return new ModelAndView("events", "model", myModel);
     }
     
     
-    @RequestMapping(value="/createevent.htm")
+   @RequestMapping(value="/createevent.htm")
     public ModelAndView handleRequest2() {
         Map<String, Object> myModel = new HashMap<String, Object>();
-        //myModel.put("createevent", this.eventManager.getAll());
+        myModel.put("eventType", this.eventTypeManager.getAll());
         return new ModelAndView("createevent", "model", myModel);
     }
+    
+    /*@RequestMapping(value="/createevent.htm")
+    public HashMap handleRequest2() {
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        myModel.put("createevent", this.eventTypeManager.getAll());
+        return (HashMap) myModel;
+    }*/
   
     //modificar evento
     @RequestMapping(value = "/events.htm", params = { 
@@ -70,7 +81,7 @@ public class EventController {
 	    "time"}, method = RequestMethod.POST)
     public String onSubmit(
 	    @RequestParam("id") int id, 
-	    @RequestParam("idType") int idType,
+	    @RequestParam("idType") String idType,
 	    @RequestParam("name") String name,
 	    @RequestParam("description") String description,
 	    @RequestParam("duration") String duration, 
@@ -102,7 +113,7 @@ public class EventController {
 	    "startDate",
 	    "time" }, method = RequestMethod.POST)
     public String onSubmitNuevo(
-	    @RequestParam("idType") int idType,
+	    @RequestParam("idType") String idType,
 	    @RequestParam("name") String name,
 	    @RequestParam("description") String description,
 	    @RequestParam("duration") String duration, 
