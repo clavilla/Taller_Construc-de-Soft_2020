@@ -49,6 +49,7 @@ public class EventController {
     public ModelAndView handleRequest() {
         Map<String, Object> myModel = new HashMap<String, Object>();
         myModel.put("events", this.eventManager.getAll());
+        myModel.put("eventType", this.eventTypeManager.getAll());
         return new ModelAndView("events", "model", myModel);
     }
     

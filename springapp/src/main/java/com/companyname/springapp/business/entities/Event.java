@@ -46,25 +46,14 @@ public class Event {
 
     @Column(name = "time")
     private String time;
-    
-    private String urlTipo;
+   
     
    // @Column(name = "img")
     //private String img;
 
-    @Autowired
-    private EventTypeRepository eventTypeRepository;
     
     public Event() {
 
-    }
-
-    public String getUrlTipo(String tipo) {
-	return eventTypeRepository.getDireccionImagen(tipo);
-    }
-
-    public void setUrlTipo(String urlTipo) {
-        this.urlTipo = urlTipo;
     }
 
     public Integer getId() {

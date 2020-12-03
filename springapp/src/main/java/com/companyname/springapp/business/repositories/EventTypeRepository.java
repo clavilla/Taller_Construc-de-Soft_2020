@@ -11,6 +11,4 @@ public interface EventTypeRepository extends CrudRepository<EventType, Integer>{
 
     List <EventType> findByid (int id);
     
-    String getDireccionImagen(String tipo);
-    
 }

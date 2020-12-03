@@ -8,5 +8,4 @@ public interface EventTypeManager {
 
     public List<EventType> getAll();
 
-    public String getDireccionImagen(String tipo);
 }

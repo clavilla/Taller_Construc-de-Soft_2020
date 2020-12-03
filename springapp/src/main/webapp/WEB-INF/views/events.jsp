@@ -28,23 +28,25 @@
 <!--  body class="bg-dark" onload="datos_iniciales()">-->
 <body class="bg-dark">
 
- <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="box-shadow: 2px 2px 5px #000">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">Centro Cultural Sumate</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="createevent.htm">Ir a crear evento</a>
-            </li>
-            <a class="btn btn-dark ml-3" href="#">Cerrar sesión</a>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top"
+		style="box-shadow: 2px 2px 5px #000">
+		<div class="container">
+			<a class="navbar-brand" href="index.php">Centro Cultural Sumate</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="createevent.htm">Ir a crear evento</a></li>
+					<a class="btn btn-dark ml-3" href="#">Cerrar sesión</a>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<!-- EVENTOS -->
 	<section id="eventos" class="container pt-5">
@@ -52,39 +54,51 @@
 			<div class="mt-3">
 				<div>
 					<h1 class="text-white mb-3">Eventos Próximos</h1>
-					
+
 					<div class="row"></div>
-				
+
 
 					<c:forEach items="${model.events}" var="event">
-					
+
 						<div class='col-md-6 col-lg-4 mb-4'>
 							<div class='card'>
 								<!-- <img src='abcv' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'> -->
 								<div class='card-body'>
-									<a href='#' class='h5 card-title stretched-link text-dark'><c:out value="${event.id} - ${event.name}" /></a>
-									<p class='card-text'><c:out value="${event.description}" /></p>
-									<p class='card-text'><c:out value="Inicia: ${event.startDate}" /></p>
-									<img alt="" src="${event.startDate}">
+									<a href='#' class='h5 card-title stretched-link text-dark'><c:out
+											value="${event.id} - ${event.name}" /></a>
+									<p class='card-text'>
+										<c:out value="${event.description}" />
+									</p>
+									<p class='card-text'>
+										<c:out value="Inicia: ${event.startDate}" />
+										<c:out value="Tipo: ${event.idType}" />
+									</p>
+									<c:forEach items="${model.eventType}" var="eventType">
+										<c:if test="${eventType.tipo == event.idType}">
+										<img style="width: 100px; height: 100px" src="<c:out value=" ${eventType.imagen}" />">
+										</c:if>
+									</c:forEach>
+
 								</div>
 								<ul class='list-group list-group-flush'>
-			                        <li class='list-group-item'>Duración: <c:out value="${event.duration}" /></li>
-			                        
-			                      </ul>
-			                    
-			                      <div>
-			                      <input type="submit" value="Modificar" class="btn btn-info btn-block">
-			                      
-								<input type="submit" value="Eliminar" class="btn btn-danger btn-block">
-								</div>
-							</div>								
-						</div>
-					</div>							
-				</div>
+									<li class='list-group-item'>Duración: <c:out
+											value="${event.duration}" /></li>
 
-					</c:forEach>
+								</ul>
+
+								<div>
+									<input type="submit" value="Modificar"
+										class="btn btn-info btn-block"> <input type="submit"
+										value="Eliminar" class="btn btn-danger btn-block">
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
+
+			</c:forEach>
+		</div>
+		</div>
 		</div>
 	</section>
 
