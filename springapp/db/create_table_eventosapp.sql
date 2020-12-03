@@ -1,12 +1,12 @@
 CREATE TABLE `springapp`.`eventos` (
   `id` INT(11) NOT NULL,
   `idType` INT(11) NULL,
-  `name` VARCHAR(45) NULL,
-  `description` VARCHAR(45) NULL,
+  `name` VARCHAR(100) NULL,
+  `description` VARCHAR(245) NULL,
   `duration` VARCHAR(45) NULL,
   `dayQuantity` VARCHAR(45) NULL,
-  `startDate` DATETIME NULL,
-  `endDate` DATETIME NULL,
+  `startDate` DATE NULL,
+  `endDate` DATE NULL,
   `time` TIME NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
