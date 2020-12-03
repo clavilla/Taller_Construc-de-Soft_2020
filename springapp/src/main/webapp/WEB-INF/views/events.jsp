@@ -57,15 +57,22 @@
 
 					<div class="row"></div>
 
-
 					<c:forEach items="${model.events}" var="event">
-
+						
 						<div class='col-md-6 col-lg-4 mb-4'>
 							<div class='card'>
 								<!-- <img src='abcv' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'> -->
 								<div class='card-body'>
 									<a href='#' class='h5 card-title stretched-link text-dark'><c:out
 											value="${event.id} - ${event.name}" /></a>
+									<c:forEach items="${model.eventType}" var="eventType">
+										<c:if test="${eventType.tipo == event.idType}">
+											<div align='center'>
+												<img style="width: 100px; height: 100px"
+													src="<c:out value="${eventType.imagen}" />">
+											</div>
+										</c:if>
+									</c:forEach>
 									<p class='card-text'>
 										<c:out value="${event.description}" />
 									</p>
@@ -73,11 +80,7 @@
 										<c:out value="Inicia: ${event.startDate}" />
 										<c:out value="Tipo: ${event.idType}" />
 									</p>
-									<c:forEach items="${model.eventType}" var="eventType">
-										<c:if test="${eventType.tipo == event.idType}">
-										<img style="width: 100px; height: 100px" src="<c:out value=" ${eventType.imagen}" />">
-										</c:if>
-									</c:forEach>
+
 
 								</div>
 								<ul class='list-group list-group-flush'>
@@ -98,8 +101,7 @@
 
 			</c:forEach>
 		</div>
-		</div>
-		</div>
+
 	</section>
 
 	<footer class="mt-5 bg-dark"></footer>
