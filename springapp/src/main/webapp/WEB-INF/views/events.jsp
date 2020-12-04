@@ -53,55 +53,44 @@
 		<div class="pt-5">
 			<div class="mt-3">
 				<div>
-					<h1 class="text-white mb-3">Eventos Próximos</h1>
-
-					<div class="row"></div>
-
-					<c:forEach items="${model.events}" var="event">
-						
-						<div class='col-md-6 col-lg-4 mb-4'>
-							<div class='card'>
-								<!-- <img src='abcv' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'> -->
-								<div class='card-body'>
-									<a href='#' class='h5 card-title stretched-link text-dark'><c:out
-											value="${event.id} - ${event.name}" /></a>
+					<h1 class="text-white mb-3">Nuestros eventos</h1>
+					<div class="row">
+						<c:forEach items="${model.events}" var="event">
+							<div class='col-md-6 col-lg-4 mb-4'>
+								<div class='card'>
 									<c:forEach items="${model.eventType}" var="eventType">
 										<c:if test="${eventType.tipo == event.idType}">
-											<div align='center'>
-												<img style="width: 100px; height: 100px"
-													src="<c:out value="${eventType.imagen}" />">
-											</div>
+											<img src="<c:out value="${eventType.imagen}" />"
+												style='border-radius: 5%; width: 50%;'
+												class='img-fluid rounded d-block mx-auto mt-2' alt='...'>
 										</c:if>
 									</c:forEach>
-									<p class='card-text'>
-										<c:out value="${event.description}" />
-									</p>
-									<p class='card-text'>
-										<c:out value="Inicia: ${event.startDate}" />
-										<c:out value="Tipo: ${event.idType}" />
-									</p>
-
-
-								</div>
-								<ul class='list-group list-group-flush'>
-									<li class='list-group-item'>Duración: <c:out
-											value="${event.duration}" /></li>
-
-								</ul>
-
-								<div>
-									<input type="submit" value="Modificar"
-										class="btn btn-info btn-block"> <input type="submit"
-										value="Eliminar" class="btn btn-danger btn-block">
+									<div class='card-body'>
+										<a href='#' class='h5 card-title stretched-link text-dark'><c:out
+												value="${event.name}" /></a>
+										<p class='card-text'>
+											<c:out value="${event.description}" />
+										</p>
+									</div>
+									<ul class='list-group list-group-flush'>
+										<li class='list-group-item'><c:out
+												value="Tipo: ${event.idType}" /></li>
+										<li class='list-group-item'><c:out
+												value="Inicia: ${event.startDate}" /></li>
+										<li class='list-group-item'><c:out
+												value="Termina: ${event.endDate}" /></li>
+										<li class='list-group-item'><c:out
+												value="Hora: ${event.endDate}" /></li>
+										<li class='list-group-item'><c:out
+												value="Duracion: ${event.dayQuantity} ${event.duration}" /></li>
+									</ul>
 								</div>
 							</div>
-						</div>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
-
-			</c:forEach>
 		</div>
-
 	</section>
 
 	<footer class="mt-5 bg-dark"></footer>

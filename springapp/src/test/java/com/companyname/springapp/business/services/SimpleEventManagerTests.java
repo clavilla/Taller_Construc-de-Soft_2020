@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.companyname.springapp.business.entities.Event;
-import com.companyname.springapp.business.entities.Product;
 
 public class SimpleEventManagerTests {
 
