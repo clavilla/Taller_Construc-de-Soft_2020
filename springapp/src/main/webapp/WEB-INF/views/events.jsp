@@ -63,8 +63,9 @@
 							<div class='card'>
 								<!-- <img src='abcv' style='border-radius: 5%; width: 50%;' class='img-fluid rounded d-block mx-auto' alt='...'> -->
 								<div class='card-body'>
-									<a href='#' class='h5 card-title stretched-link text-dark'><c:out
-											value="${event.id} - ${event.name}" /></a>
+<!-- 									<a href='#' class='h5 card-title stretched-link text-dark'> -->
+									<c:out
+											value="${event.id} - ${event.name}" />
 									<c:forEach items="${model.eventType}" var="eventType">
 										<c:if test="${eventType.tipo == event.idType}">
 											<div align='center'>
@@ -90,9 +91,13 @@
 								</ul>
 
 								<div>
+								<a href="/springapp/modifyevent.htm?id=<c:out value=" ${event.id}" />" class="btn btn-default"">
 									<input type="submit" value="Modificar"
-										class="btn btn-info btn-block"> <input type="submit"
-										value="Eliminar" class="btn btn-danger btn-block">
+										class="btn btn-info btn-block"> 
+										<a href="/springapp/eliminarEvento.htm?id=<c:out value=" ${event.id}" />" class="btn btn-default"">
+                                    <i class="fa fa-trash"></i>
+                                    </a>
+										
 								</div>
 							</div>
 						</div>
