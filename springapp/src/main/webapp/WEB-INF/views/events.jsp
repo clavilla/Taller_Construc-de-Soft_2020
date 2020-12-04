@@ -65,9 +65,12 @@
 												class='img-fluid rounded d-block mx-auto mt-2' alt='...'>
 										</c:if>
 									</c:forEach>
-									<div class='card-body'>
-										<c:out
+									<div class='card-body' >
+									<h3 class='text-info'>
+									<c:out
 												value="${event.name}" />
+									</h3>
+										
 										<p class='card-text'>
 											<c:out value="${event.description}" />
 										</p>

@@ -162,7 +162,7 @@
 							</div>
 
 							<input type="submit" name="crear"
-								class="btn btn-success btn-lg btn-block" value="Crear"></input>
+								class="btn btn-info btn-lg btn-block" value="Crear"></input>
 					</form>
 
 					<!-- PHP AQUI -->

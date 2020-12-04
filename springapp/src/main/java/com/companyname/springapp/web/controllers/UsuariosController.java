@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.companyname.springapp.business.entities.Usuario;
 import com.companyname.springapp.business.services.UsuarioManager;
 
 @Controller
@@ -24,13 +25,28 @@ public class UsuariosController {
 	return new ModelAndView("login", "model", myModel);
     }
 
+//    @RequestMapping(value = "/login.htm", params = { "usuario", "contrasenia"}, method = RequestMethod.POST)
+//    public String onSubmit(
+//	    @RequestParam("usuario") String usuario, 
+//	    @RequestParam("contrasenia") String contrasenia) {
+//	usuarioManager.findByUserPass(usuario, contrasenia);
+//	//usuarioManager.guardarUsuario(usuario, contrasenia);
+//	return "redirect:/events.htm";
+//    }
+    
     @RequestMapping(value = "/login.htm", params = { "usuario", "contrasenia"}, method = RequestMethod.POST)
     public String onSubmit(
 	    @RequestParam("usuario") String usuario, 
 	    @RequestParam("contrasenia") String contrasenia) {
-	usuarioManager.findByUserPass(usuario, contrasenia);
+	Usuario user;
+	user = usuarioManager.findByUserPass(usuario, contrasenia);
 	//usuarioManager.guardarUsuario(usuario, contrasenia);
-	return "redirect:/events.htm";
+	if (user != null) {
+	    return "redirect:/events.htm";
+	}else {
+	    return "redirect:/signup.htm";
+	   
+	}
     }
     
     @RequestMapping(value = "/signup.htm", method = RequestMethod.GET)
