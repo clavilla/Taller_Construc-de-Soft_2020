@@ -78,9 +78,10 @@
 										<li class='list-group-item'><c:out
 												value="Inicia: ${event.startDate}" /></li>
 										<li class='list-group-item'><c:out
-												value="Termina: ${event.endDate}" /></li>
+												value="Hora: ${event.time}" /></li>
 										<li class='list-group-item'><c:out
-												value="Hora: ${event.endDate}" /></li>
+												value="Termina: ${event.endDate}" /></li>
+
 										<li class='list-group-item'><c:out
 												value="Duracion: ${event.dayQuantity} ${event.duration}" /></li>
 									</ul>
