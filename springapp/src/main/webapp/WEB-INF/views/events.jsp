@@ -83,7 +83,7 @@
 												value="Termina: ${event.endDate}" /></li>
 
 										<li class='list-group-item'><c:out
-												value="Duracion: ${event.dayQuantity} ${event.duration}" /></li>
+												value="Duracion: ${event.duration}" /></li>
 									</ul>
 								</div>
 							</div>
