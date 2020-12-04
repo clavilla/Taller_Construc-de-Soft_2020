@@ -79,7 +79,7 @@
 
 
 							<select required class="form-control" id="id" name="idType">
-								<option>
+								<option>Selecciona el tipo de evento
 									<c:forEach items="${model.eventType}" var="event">
 										<option><c:out value="${event.tipo}" /></option>
 									</c:forEach>
