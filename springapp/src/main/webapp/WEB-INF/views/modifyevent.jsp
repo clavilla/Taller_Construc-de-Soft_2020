@@ -161,7 +161,7 @@
 							</div>
 
 							<input type="submit" name="crear"
-								class="btn btn-light btn-lg btn-block" value="Modificar"></input>
+								class="btn btn-success btn-lg btn-block" value="Modificar"></input>
 					</form>
 
 					<!-- PHP AQUI -->
